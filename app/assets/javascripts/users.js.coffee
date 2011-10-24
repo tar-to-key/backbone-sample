@@ -23,8 +23,7 @@ class UserView extends Backbone.View
         @users.create  name: user_name
 
     removeUser: (e) ->
-        user = @users.get(e.currentTarget.id)
-        user.destroy
+        user = @users.get(e.currentTarget.id).destroy
             success: (model, response) =>
                 $("#list").empty()
                 @list()
